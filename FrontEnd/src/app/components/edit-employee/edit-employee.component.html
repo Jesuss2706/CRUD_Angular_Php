@@ -1,20 +1,20 @@
 <div class="card">
   <div class="card-header">Edit Employee</div>
   <div class="card-body">
-    <form>
+    <form [formGroup]="employeesForm" (ngSubmit)="sendData()">
       <div class="mb-3">
         <label for="" class="form-label">Name</label>
-        <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="Write your name" />
+        <input formControlName="nombre" type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="Write your name" />
       </div>
 
       <div class="mb-3">
         <label for="" class="form-label">Email</label>
-        <input type="text" class="form-control" name="" id="" aria-describedby="helpId"
+        <input formControlName="correo" type="email" class="form-control" name="" id="" aria-describedby="helpId"
           placeholder="Write your email" />
       </div>
 
       <div class="btn-group" role="group" aria-label="Button group name">
-        <button type="button" class="btn btn-success">Add</button>
+        <button type="submit" class="btn btn-success">Add</button>
         <button type="button" class="btn btn-primary">Cancel</button>
       </div>
     </form>

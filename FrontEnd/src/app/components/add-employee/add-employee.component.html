@@ -1,15 +1,15 @@
   <div class="card">
     <div class="card-header">Add Employee</div>
     <div class="card-body">
-      <form (ngSubmit)="sendData()">
+      <form [formGroup]="employeeForm" (ngSubmit)="sendData()">
         <div class="mb-3">
           <label for="" class="form-label">Name</label>
-          <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="Write your name" />
+          <input type="text" class="form-control" name="" formControlName="name" id="" aria-describedby="helpId" placeholder="Write your name" />
         </div>
 
         <div class="mb-3">
           <label for="" class="form-label">Email</label>
-          <input type="text" class="form-control" name="" id="" aria-describedby="helpId"
+          <input type="text" class="form-control" name="" formControlName="email" id="" aria-describedby="helpId"
             placeholder="Write your email" />
         </div>
 
