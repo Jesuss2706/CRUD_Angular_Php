@@ -20,14 +20,11 @@ export class ListEmployeeComponent implements OnInit {
   }
 
   getAllEmployees() {
-    this.crudService.GetEmployees().subscribe(response => {
-      console.log(response);
-      this.Employees = response;
-    });
+    this.crudService.GetEmployees().subscribe(response => this.Employees = response);
   }
 
   deleteRegister(id: string, iControl: any) {
-    if(window.confirm('Are you sure you want to delete?')){
+    if (window.confirm('Are you sure you want to delete?')) {
       this.crudService.deleteEmployee(id).subscribe((response) => {
         this.getAllEmployees();
       });

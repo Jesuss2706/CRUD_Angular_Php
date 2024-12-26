@@ -1,21 +1,21 @@
   <div class="card">
     <div class="card-header">Add Employee</div>
     <div class="card-body">
-      <form [formGroup]="employeeForm" (ngSubmit)="sendData()">
+      <form ngNativeValidate [formGroup]="employeeForm" (ngSubmit)="sendData()">
         <div class="mb-3">
           <label for="" class="form-label">Name</label>
-          <input type="text" class="form-control" name="" formControlName="name" id="" aria-describedby="helpId" placeholder="Write your name" />
+          <input required type="text" class="form-control" name="" formControlName="name" id="" aria-describedby="helpId" placeholder="Write your name" />
         </div>
 
         <div class="mb-3">
           <label for="" class="form-label">Email</label>
-          <input type="text" class="form-control" name="" formControlName="email" id="" aria-describedby="helpId"
+          <input required type="email" class="form-control" name="" formControlName="email" id="" aria-describedby="helpId"
             placeholder="Write your email" />
         </div>
 
         <div class="btn-group" role="group" aria-label="Button group name">
           <button type="submit " class="btn btn-success">Add</button>
-          <button type="button" class="btn btn-primary">Cancel</button>
+          <button type="button" routerLink="/list-employee" class="btn btn-primary">Cancel</button>
         </div>
       </form>
     </div>

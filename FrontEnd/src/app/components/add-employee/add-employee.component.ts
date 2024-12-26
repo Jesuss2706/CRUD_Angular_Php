@@ -33,6 +33,5 @@ export class AddEmployeeComponent implements OnInit {
   sendData(): any {
     this.crudService.AddEmployee(this.employeeForm.value).subscribe();
     this.router.navigateByUrl('/list-employee');
-
   }
 }

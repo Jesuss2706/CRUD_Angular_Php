@@ -31,7 +31,6 @@ if (isset($_GET["borrar"])){
 }
 //Inserta un nuevo registro y recepciona en método post los datos de nombre y correo
 if(isset($_GET["insertar"])){
-   
     $data = json_decode(file_get_contents("php://input"));
     $nombre=$data->name;
     $correo=$data->email;
@@ -48,8 +47,8 @@ if(isset($_GET["actualizar"])){
     $data = json_decode(file_get_contents("php://input"));
 
     $id=(isset($data->id))?$data->id:$_GET["actualizar"];
-    $nombre=$data->name;
-    $correo=$data->email;
+    $nombre=$data->nombre;
+    $correo=$data->correo;
     
     $sqlEmpleaados = mysqli_query($conexionBD,"UPDATE empleados SET nombre='$nombre',correo='$correo' WHERE id='$id'");
     echo json_encode(["success"=>1]);

@@ -32,6 +32,8 @@ export class CrudService {
   }
 
   editEmployee(id: any,employeeData: Employee): Observable<any> {
-    return this.clientHttp.post(this.API + "?actualizar=1"+id, employeeData);
+    console.log(employeeData);
+
+    return this.clientHttp.post(`${this.API}?actualizar=${id}`, employeeData);
   }
 }
